@@ -7,16 +7,40 @@ body{
     align-items: center;
     padding: 0px;
     margin: 0px;
-   
+   background-color: #000;
     font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
     
-    background-image: url("https://i.pinimg.com/564x/76/f9/85/76f9857ec7b97d2df45e40446fc2c50b.jpg");
+   
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+     background-image: url("https://i.pinimg.com/564x/76/f9/85/76f9857ec7b97d2df45e40446fc2c50b.jpg");
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+.init{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banderines{
+    position: fixed;
+    top: 20px;
+    right: -20px;
+    width: 70%;
+    filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
+    transform: rotate(17deg);
 }
 
 a{
@@ -32,7 +56,7 @@ a{
         
 }
 .page{
-    width: 50%;
+    width: 100%;
     height: auto;
     min-height: 100vh;
     padding: 1em;
@@ -73,6 +97,15 @@ a{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
+.col{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.col-center{
+    justify-content: center;
+    align-items: center;
+}
 .addres{
     display: flex;
     flex-direction: column;
@@ -93,8 +126,8 @@ a{
 }
 
 @media screen and (max-width: 768px) {
-  .page{
-    width: 100%;
-  }
+    .content{
+        width: 100%;
+    }
 }
 

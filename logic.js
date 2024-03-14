@@ -1,3 +1,6 @@
+//eccion de variables
+var musicOn=false;
+
 function animationScroll(){
      var links = document.querySelectorAll('a[href^="#"]');
 
@@ -35,12 +38,21 @@ function tiempoRestante(fechaObjetivo) {
         segundos: segundos
     };
 }
+
 function playMuic(){
     var audio = new Audio('indigo.mp3');
     audio.loop = true; // Reproducir en bucle
     audio.play(); // Iniciar reproducción
 }
 
+function initApp(){
+    if(!musicOn){
+        playMuic(); 
+        let bt = document.getElementById('btnInit');
+        bt.style.display="none";
+    }
+    
+}
 
 var fechaObjetivo = new Date("03/15/2024 12:30:00"); // Fecha y hora objetivo
 var tiempoRestanteObj = tiempoRestante(fechaObjetivo);
