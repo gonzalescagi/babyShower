@@ -26,6 +26,7 @@ body{
     background-size: cover;
     background-repeat: repeat-y;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .init{
@@ -34,13 +35,12 @@ body{
     justify-content: center;
 }
 
-.banderines{
+.banderines{    
     position: fixed;
-    top: 20px;
-    right: -20px;
-    width: 70%;
+    top: -7px;
+    left: 30%;
+    width: 40%;
     filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
-    transform: rotate(17deg);
 }
 
 a{
@@ -62,12 +62,13 @@ a{
     padding: 1em;
     box-sizing: border-box;
     border: 5px solid #fff;
+    border-top: 0px;
 
 }
 
 .date{
     width: 200px;
-    border: 1px solid;
+    border: 2px solid #96c8bd;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -129,5 +130,127 @@ a{
     .content{
         width: 100%;
     }
+    .banderines{
+        position: fixed;
+        top: 40px;
+        left: -20px;
+        width: 80%;
+        filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
+        transform: rotate(335deg);
+    }
 }
 
+ @keyframes floatUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+@keyframes floatLeftRight {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+        }
+
+.globo {
+        filter: blur(10);
+            animation:floatLeftRight  5s ease-in-out infinite, floatUpDown 3s ease-in-out infinite;
+        }
+
+
+@keyframes escribir {
+    from {
+        /* El texto comienza sin ancho */
+        opacity: 0;
+    }
+    to {
+     /* El texto alcanza su ancho completo */
+        opacity: 1;
+    }
+}
+
+.textoAnimado {
+    overflow: hidden;
+    animation: escribir 1.5s ease-in-out;
+}
+
+@keyframes entradaDesdeAbajo {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaDesdeDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entradaDesdeIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entradaDesdeArriba {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.entrada {
+    opacity: 0; /* Inicialmente, el elemento es invisible */
+    position: relative; /* Permitir el desplazamiento relativo */
+    animation-duration: 1s;
+    animation-fill-mode: forwards; /* Mantener el último estado de la animación */
+}
+
+.desdeAbajo {
+    animation: entradaDesdeAbajo 1.5s ease-in-out;
+}
+
+.desdeDerecha {
+    animation: entradaDesdeDerecha 1.5s ease-in-out;
+}
+
+.desdeIzquierda {
+    animation: entradaDesdeIzquierda 1.5s ease-in-out;
+}
+
+.desdeArriba {
+    animation: entradaDesdeArriba 1.5s ease-in-out;
+}
