@@ -1,0 +1,100 @@
+body{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+   
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    
+    background-image: url("https://i.pinimg.com/564x/76/f9/85/76f9857ec7b97d2df45e40446fc2c50b.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+a{
+    text-decoration: none;
+}
+.lup{
+    border-radius: 1em;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 
+    -webkit-box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.4);
+    box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.4);
+        
+}
+.page{
+    width: 50%;
+    height: auto;
+    min-height: 100vh;
+    padding: 1em;
+    box-sizing: border-box;
+    border: 5px solid #fff;
+
+}
+
+.date{
+    width: 200px;
+    border: 1px solid;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 1em;
+}
+
+.button-s{
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button-s:hover{
+    background-color: aquamarine;
+    color: #fff;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+.addres{
+    display: flex;
+    flex-direction: column;
+}
+.aling-right{
+    justify-content: flex-end;
+}
+.aling-center{
+    justify-content: center;
+}
+.font-sm{font-size: 1.2em;}
+.font-lg{font-size: 1.7em;}
+.font-xlg{font-size: 2.5em;}
+.font-xlg-e{font-size: 2.7em;}
+
+.sec{
+  text-align: center;  
+}
+
+@media screen and (max-width: 768px) {
+  .page{
+    width: 100%;
+  }
+}
+
