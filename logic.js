@@ -78,3 +78,32 @@ setInterval(()=>{
             // Cambia "https://www.ejemplo.com" por la dirección a la que deseas redirigir
             window.location.href = "#googlemaps";
 }
+
+
+
+
+///LLUVIA////
+/*
+function crearConfeti() {
+    const confeti = document.createElement('div');
+    confeti.classList.add('confeti');
+
+    const tamaño = Math.random() * 10 + 5; // Tamaño aleatorio entre 5px y 15px
+    const posicionX = Math.random() * window.innerWidth; // Posición X aleatoria en la ventana
+    const rotacion = Math.random() * 360; // Rotación aleatoria
+
+    confeti.style.width = tamaño + 'px';
+    confeti.style.height = tamaño + 'px';
+    confeti.style.left = posicionX + 'px';
+    confeti.style.transform = `rotate(${rotacion}deg)`;
+
+    document.querySelector('.contenedor-confeti').appendChild(confeti);
+
+    // Remover el confeti después de la animación
+    confeti.addEventListener('animationend', () => {
+        confeti.remove();
+    });
+}
+*/
+// Generar confeti cada 100ms
+//setInterval(crearConfeti, 350);
