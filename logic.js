@@ -54,17 +54,9 @@ function initApp(){
     
 }
 
-var fechaObjetivo = new Date("03/15/2024 12:30:00"); // Fecha y hora objetivo
+var fechaObjetivo = new Date("04/28/2024 12:30:00"); // Fecha y hora objetivo
 var tiempoRestanteObj = tiempoRestante(fechaObjetivo);
 console.log('Fuera del evento DOMContentLoaded:', tiempoRestanteObj);
-
-//ESPERA QUE CARGUE LA PAGINA
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Dentro del evento DOMContentLoaded:');
-    var audio = document.getElementById('audioPlayer');
-    animationScroll();
-});
-
 
 setInterval(()=>{
     var tiempo = tiempoRestante(fechaObjetivo);
@@ -74,9 +66,11 @@ setInterval(()=>{
 
 
 //no usado .. xq no ejecuta la animacion del scrol
- function redireccionar(type) {
-            // Cambia "https://www.ejemplo.com" por la dirección a la que deseas redirigir
-            window.location.href = "#googlemaps";
+ function redireccionar(id,targetId) {
+            var targetElement = document.getElementById(id);
+            var targetOffset = targetElement.offsetTop;
+            window.scrollTo({top: targetOffset,behavior: 'smooth'});
+            window.location.href =targetId // "#googlemaps";
 }
 
 
@@ -107,3 +101,45 @@ function crearConfeti() {
 */
 // Generar confeti cada 100ms
 //setInterval(crearConfeti, 350);
+
+
+// Función para verificar si la sección está visible en la pantalla
+function esVisible(elemento) {
+    const posicion = elemento.getBoundingClientRect();
+    return (
+        posicion.top >= 0 &&
+        posicion.left >= 0 &&
+        posicion.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        posicion.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Función para manejar la animación cuando la sección es visible
+function manejarAnimacion() { 
+    const seccion = document.querySelector('.date');
+    const avion = document.querySelector('.avion');
+    console.log("xx",esVisible(seccion))
+    if (esVisible(seccion)) {
+        avion.classList.add('avionAnimate');
+        window.removeEventListener('scroll', manejarAnimacion);
+    }else{
+        window.addEventListener('scroll', manejarAnimacion);
+        avion.classList.remove('avionAnimate');
+    }
+}
+
+
+
+//ESPERA QUE CARGUE LA PAGINA
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Dentro del evento DOMContentLoaded:');
+    var audio = document.getElementById('audioPlayer');
+    animationScroll();
+    
+    // Agregar un listener para detectar el evento scroll
+window.addEventListener('scroll', manejarAnimacion);
+
+// Llamar a la función una vez para verificar si la sección es visible al cargar la página
+manejarAnimacion();
+
+});

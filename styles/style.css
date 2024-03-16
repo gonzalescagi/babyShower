@@ -92,6 +92,7 @@ a{
     font-weight: 400;
     font-style: normal;
     border-radius: 1em;
+    border-style: dashed;
 }
 
 .button-s{
@@ -138,11 +139,27 @@ a{
 .aling-center{
     justify-content: center;
 }
-.font-sm{font-size: 1.2em;}
-.font-lg{font-size: 1.7em;}
-.font-xlg{font-size: 2.5em;}
-.font-xlg-e{font-size: 2.7em;}
-
+.font-xsm{font-size: 0.9em; overflow: visible;}
+.font-sm{font-size: 1.2em; overflow: visible;}
+.font-lg{font-size: 1.7em; overflow: visible;}
+.font-xlg{font-size: 2.5em; overflow: visible;}
+.font-xlg-e{font-size: 2.7em; overflow: visible;}
+.text-center{text-align: center;}
+.text-justify{text-align: justify}
+.font-roboto{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+.box-shadow{
+    -webkit-box-shadow: 2px 3px 7px 0 rgba(0,0,0,0.4);
+    box-shadow: 2px 3px 7px 0 rgba(0,0,0,0.4);
+}
+.card{
+    padding: 1em;
+    border-radius: 1em;
+    background: #fff;
+    box-sizing: border-box;
+}
 .sec{
   text-align: center;  
 }
@@ -153,11 +170,11 @@ a{
     }
     .banderines{
         position: fixed;
-        top: 40px;
-        left: -20px;
-        width: 80%;
+        top: 0px;
+        left: 10px;
+        width: 90%;
         filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
-        transform: rotate(335deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -288,6 +305,26 @@ a{
 
 .desdeArriba {
     animation: entradaDesdeArriba 1.5s ease-in-out;
+}
+
+.avion{
+    position: relative;
+    width: 35%;
+    transition: all;
+    float: right;
+    right: -50%;
+}
+.avionAnimate{
+    top: 70vh;
+    animation: entrarDesdeDerecha 6s ease-in infinite;
+}
+@keyframes entrarDesdeDerecha {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 120%;
+    }
 }
 
 
