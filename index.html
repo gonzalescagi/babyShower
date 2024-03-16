@@ -31,9 +31,9 @@
             <!--PAGINA DE INICIO-->
             <div class="page init" id="page0">
                 <div class="col col-center">
-                    <img class="globo" src="assets/osito.png" style="width: 90%">
+                    <img class="globo" src="assets/osito1.png" style="width: 90%">
                         <h2 class="textoAnimado" style="margin: 0px; font-size: 3em;color: cadetblue;">Baby Shower</h2>
-                        <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center font-size: 4em; overflow: visible; color: darkcyan;
+                        <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3em; overflow: visible; color: darkcyan;
     text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
                         <h3 class="textoAnimado font-sm" style="text-align: center">
                          Acompáñanos a celebrar la llegada de nuestro esperado bebe.
@@ -46,7 +46,6 @@
             </div>
         
             <div class="page" id="page1">
-                <img class="avion" src="assets/avion.png">
                 
                 <div class="sec">
                     <div>
@@ -56,7 +55,7 @@
                             style="margin: 0px; color: cadetblue;">
                             Baby Shower
                             </h2>
-                             <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center font-size: 4em; overflow: visible; color: darkcyan;
+                             <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3em; overflow: visible; color: darkcyan;
     text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
                         </div>
 
@@ -68,11 +67,11 @@
 
                    
 
-                    <div class="row aling-center">
+                    <div class="textoAnimado row aling-center">
                         <div class="date">
                             <div class="font-sm">Día</div>
                             <div class="font-xlg"> 11 </div>
-                            <div class="font-lg">Mayo</div>
+                            <div class="font-lg">Abril</div>
                         </div>
                     </div>
 
@@ -84,11 +83,11 @@
                     </div>
 
 
-                    <div class="row aling-center">
+                    <div id="btn-confirmation" class="row aling-center">
                         <button class="button-s" onclick="confirmation()">Confirmar asistencia</button>
                     </div>
 
-                    <div class="row aling-center">
+                    <div id="btn-location" class="row aling-center">
                         <button class="button-s" >
                             <span class="material-symbols-outlined">
                                 <span class="material-symbols-outlined">location_on</span>
@@ -96,7 +95,8 @@
                            <a href="#googlemaps">Ver ubicación</a> </button>
                     </div>
 
-
+               <img class="avion" src="assets/avion.png">
+                    
                 </div>
 
             </div>
@@ -104,11 +104,16 @@
             <div class="page" id="page2">
                 <h3>Ubicación</h3>
 
-                <div class="row aling-center" id="googlemaps">
-                    <iframe class="lup" width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=av%20a%20790%20Comas+(Local)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='http://maps-generator.com/es'>http://maps-generator.com</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5b9e25d5de6e18768cd0924d3480dd06f1c3a8a5'></script>
+                <div class=" googlemaps row aling-center" id="googlemaps">
+                    <iframe class="lup" width="520" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=av%20a%20790%20Comas+(Local)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='http://maps-generator.com/es'>http://maps-generator.com</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5b9e25d5de6e18768cd0924d3480dd06f1c3a8a5'></script>
                 </div>
-                <p class="card box-shadow text-justify font-roboto font-xsm">Los esperamos en la Av. Univiersitaria 345 - Local MamboMambo</p>
+                <p id="boxAdres" class="card box-shadow text-justify font-roboto font-xsm">Los esperamos en la Av. Univiersitaria 345 - Local MamboMambo</p>
+                
+                 <img class="animalitos" src="assets/animales.png">
+                
             </div>
+            
+           
         
         </div>
         <!--<div class="contenedor-confeti"></div>-->

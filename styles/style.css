@@ -43,6 +43,11 @@ body{
     filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
 }
 
+.animalitos{
+    width: 90%;
+    float: right;
+}
+
 .globo-un{
     position: absolute;
     width: 30%;
@@ -171,7 +176,7 @@ a{
     .banderines{
         position: fixed;
         top: 0px;
-        left: 10px;
+        left: 20px;
         width: 90%;
         filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
         transform: rotate(0deg);
@@ -309,15 +314,16 @@ a{
 
 .avion{
     position: relative;
-    width: 35%;
+    width: 45%;
     transition: all;
     float: right;
-    right: -50%;
+    right: 0%;
 }
 .avionAnimate{
     top: 70vh;
     animation: entrarDesdeDerecha 6s ease-in infinite;
 }
+
 @keyframes entrarDesdeDerecha {
     0% {
         right: -50%;

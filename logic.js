@@ -118,14 +118,28 @@ function esVisible(elemento) {
 function manejarAnimacion() { 
     const seccion = document.querySelector('.date');
     const avion = document.querySelector('.avion');
+    //verifica en que seccion esta para activar las animaciones
     console.log("xx",esVisible(seccion))
-    if (esVisible(seccion)) {
-        avion.classList.add('avionAnimate');
-        window.removeEventListener('scroll', manejarAnimacion);
-    }else{
-        window.addEventListener('scroll', manejarAnimacion);
-        avion.classList.remove('avionAnimate');
+    //pagina 2
+    if (esVisible(document.querySelector('.date'))) {
+            let btnConf = document.getElementById('btn-confirmation');
+            let btnLocation = document.getElementById('btn-location');
+            let avion = document.querySelector('.avion');
+            btnConf.classList.add('desdeDerecha');
+            btnLocation.classList.add('desdeIzquierda');
+            avion.classList.add('desdeDerecha');
     }
+    //pagina 3 mapa
+    if (esVisible(document.getElementById('googlemaps'))) {
+        let animales = document.querySelector('.animalitos');
+        let googleMaps = document.getElementById('googlemaps');
+        let cajaDireccion = document.getElementById('boxAdres');
+        googleMaps.classList.add('desdeDerecha');
+        animales.classList.add('desdeDerecha');
+        cajaDireccion.classList.add('desdeIzquierda');
+       // window.removeEventListener('scroll', manejarAnimacion);
+    }
+    
 }
 
 
@@ -140,6 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', manejarAnimacion);
 
 // Llamar a la función una vez para verificar si la sección es visible al cargar la página
-manejarAnimacion();
+//manejarAnimacion();
 
 });
