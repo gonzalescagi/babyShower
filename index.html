@@ -7,6 +7,7 @@
     
         <title>BabyShower</title>
         <link rel="stylesheet" type="text/css" href="./styles/style.css">
+        <link rel="stylesheet" type="text/css" href="./styles/modal.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +17,37 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
         <script src="logic.js"></script>
-         <script src="service.js"></script>
+        <script src="service.js"></script>
+        <script src="modal.js"></script>
         
     </head>
     
     <body>
+        
+        <div id="modal" class="modal">
+            <div class="modal-form">
+                <div class="row aling-center">
+                    <h2>Enviar Confirmación</h2>
+                </div>
+                <div class="col aling-center">
+                    <input id="inpName" class="modal-input" type="text" placeholder="Nombre" style="margin-bottom: 0.5em">
+                    <input id="inpLastName" class="modal-input" type="text" placeholder="Apellido">
+                </div>
+                <div class="row aling-around" style="margin-top: 2em;">
+                    <button id="btnInit" class="button-s desdeAbajo" onclick="cancel()">Cancelar</button>
+                    <button id="btnInit" class="button-s desdeAbajo" onclick="confirm()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="alert" class="alert">
+            <div class="alert-content col col-center desdeAbajo">
+                <span class="material-symbols-outlined desdeAbajo" style="font-size: 8em">check</span>
+                <p id="alert-body" class="font-sm desdeAbajo">
+                    Gracias por su confirmación
+                </p>
+            </div>
+        </div>
      
         <div class="content">
             
@@ -32,7 +59,7 @@
             <div class="page init" id="page0">
                 <div class="col col-center">
                     <img class="globo" src="assets/osito1.png" style="width: 90%">
-                        <h2 class="textoAnimado" style="margin: 0px; font-size: 3em;color: cadetblue;">Baby Shower</h2>
+                        <h2 class="textoAnimado" style="margin: 0px; font-size: 3em;color: #c38f43;">Baby Shower</h2>
                         <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3em; overflow: visible; color: darkcyan;
     text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
                         <h3 class="textoAnimado font-sm" style="text-align: center">
@@ -49,44 +76,42 @@
                 
                 <div class="sec">
                     <div>
-                        
-                        <div style="margin-top: 3em">
-                           <h2 class="textoAnimado font-lg"
-                            style="margin: 0px; color: cadetblue;">
-                            Baby Shower
-                            </h2>
-                             <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3em; overflow: visible; color: darkcyan;
-    text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
-                        </div>
 
-
-                        <h3>
-                         Acompáñanos a celebrar la llegada de nuestro esperado bebe.
+                        <h3 class="textoAnimado" style="font-size: 1.85em;margin-bottom: 0px;">
+                         Acompáñanos a celebrar este día
                         </h3>
-                    </div>
-
-                   
+                    </div>   
+                    
 
                     <div class="textoAnimado row aling-center">
                         <div class="date">
-                            <div class="font-sm">Día</div>
-                            <div class="font-xlg"> 11 </div>
+                            <span class="material-symbols-outlined" style="float: right;    color: cadetblue;">calendar_month</span><br><br>
+                            <div class="font-sm">Sábado</div>
+                            <div class="font-xlg" style="    font-weight: 600;
+                            font-size: 4em;
+                            color: #FFA726;
+                            text-shadow: 1px 2px 3px #606262;"> 27 </div>
                             <div class="font-lg">Abril</div>
+                            <div class="font-xsm">2024</div>
                         </div>
+                    </div>
+                    
+        
+                             <img class="avion" src="assets/avion.png">
+                
+                    
+                    <div class="textoAnimado col aling-center font-sm" style="margin-top: 0px;">
+                         <span style="font-weight: 200; color:gray">Los esperamos en:</span> 
+                        <p class=" font-sm " style="color:gray">
+                            Av. Univiersitaria 345 - Local MamboMamb</p>
                     </div>
 
                     <div class="row aling-center">
                         <div>
-                            <div id="currentDate">
-                            </div>
+                            <div id="currentDate" class="font-sm"></div>
                         </div>
                     </div>
-
-
-                    <div id="btn-confirmation" class="row aling-center">
-                        <button class="button-s" onclick="confirmation()">Confirmar asistencia</button>
-                    </div>
-
+                    
                     <div id="btn-location" class="row aling-center">
                         <button class="button-s" >
                             <span class="material-symbols-outlined">
@@ -94,16 +119,24 @@
                             </span>
                            <a href="#googlemaps">Ver ubicación</a> </button>
                     </div>
-
-               <img class="avion" src="assets/avion.png">
+                    
+                    <div id="btn-confirmation" class="row aling-center">
+                        <button class="button-s" style="background-color: #FFA726; color: #fff" onclick="openModal()">
+                            <span class="material-symbols-outlined">person_check</span>
+                            Confirmar asistencia
+                        </button>
+                    </div>
                     
                 </div>
 
             </div>
 
             <div class="page" id="page2">
-                <h3>Ubicación</h3>
-
+                <div class="sec">
+                    <div class="row">
+                        <h3>Ubicación</h3>
+                    </div>
+                    
                 <div class=" googlemaps row aling-center" id="googlemaps">
                     <iframe class="lup" width="520" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=av%20a%20790%20Comas+(Local)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='http://maps-generator.com/es'>http://maps-generator.com</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5b9e25d5de6e18768cd0924d3480dd06f1c3a8a5'></script>
                 </div>
@@ -111,6 +144,8 @@
                 
                  <img class="animalitos" src="assets/animales.png">
                 
+                </div>
+
             </div>
             
            

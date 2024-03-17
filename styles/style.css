@@ -98,6 +98,7 @@ a{
     font-style: normal;
     border-radius: 1em;
     border-style: dashed;
+    padding: 1em;
 }
 
 .button-s{
@@ -144,6 +145,9 @@ a{
 .aling-center{
     justify-content: center;
 }
+.aling-around{
+    justify-content: space-around;
+}
 .font-xsm{font-size: 0.9em; overflow: visible;}
 .font-sm{font-size: 1.2em; overflow: visible;}
 .font-lg{font-size: 1.7em; overflow: visible;}
@@ -167,6 +171,11 @@ a{
 }
 .sec{
   text-align: center;  
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -297,7 +306,7 @@ a{
 }
 
 .desdeAbajo {
-    animation: entradaDesdeAbajo 2s ease-in-out;
+    animation: entradaDesdeAbajo 1.5s ease-in-out;
 }
 
 .desdeDerecha {

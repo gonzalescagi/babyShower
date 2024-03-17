@@ -43,6 +43,7 @@ function playMuic(){
     var audio = new Audio('indigo.mp3');
     audio.loop = true; // Reproducir en bucle
     audio.play(); // Iniciar reproducción
+    musicOn=true;
 }
 
 function initApp(){
@@ -153,7 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar un listener para detectar el evento scroll
 window.addEventListener('scroll', manejarAnimacion);
 
-// Llamar a la función una vez para verificar si la sección es visible al cargar la página
-//manejarAnimacion();
 
 });
