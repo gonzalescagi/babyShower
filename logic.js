@@ -57,12 +57,19 @@ function initApp(){
 
 var fechaObjetivo = new Date("04/28/2024 12:30:00"); // Fecha y hora objetivo
 var tiempoRestanteObj = tiempoRestante(fechaObjetivo);
-console.log('Fuera del evento DOMContentLoaded:', tiempoRestanteObj);
 
 setInterval(()=>{
     var tiempo = tiempoRestante(fechaObjetivo);
-   var doc = document.getElementById("currentDate")
-   doc.innerHTML= "Faltan "+ tiempo.dias + " día "+ tiempo.horas + " horas con "+tiempo.minutos+" minutos y "+tiempo.segundos;
+  // var doc = document.getElementById("currentDate");
+    let dia = document.getElementById("dia");
+    let hora = document.getElementById("hora");
+    let minuto = document.getElementById("minuto");
+    let segundo = document.getElementById("segundo");
+   //doc.innerHTML= "Faltan "+ tiempo.dias + " día "+ tiempo.horas + " horas con "+tiempo.minutos+" minutos y "+tiempo.segundos;
+    dia.innerHTML=tiempo.dias;
+    hora.innerHTML=tiempo.horas;
+    minuto.innerHTML=tiempo.minutos;
+    segundo.innerHTML=tiempo.segundos;
 },1000)
 
 

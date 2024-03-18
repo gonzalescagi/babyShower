@@ -3,7 +3,8 @@
     
     <head>
          <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     
         <title>BabyShower</title>
         <link rel="stylesheet" type="text/css" href="./styles/style.css">
@@ -62,12 +63,16 @@
                         <h2 class="textoAnimado" style="margin: 0px; font-size: 3em;color: #c38f43;">Baby Shower</h2>
                         <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3em; overflow: visible; color: darkcyan;
     text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
-                        <h3 class="textoAnimado font-sm" style="text-align: center">
-                         Acompáñanos a celebrar la llegada de nuestro esperado bebe.
-                        </h3>
+                        <span class="textoAnimado font-roboto font-sm" style="text-align: center;color:#5d8580;margin-top: 1em; margin-bottom: 1em;">
+                         Acompáñanos a celebrar la llegada de nuestro esperado bebe..!!
+                        </span>
                 </div>
                  <div class="row aling-center">
-                        <button id="btnInit" class="button-s desdeAbajo" onclick="initApp()"><a href="#page1">Ver invitación</a></button>
+                        <button id="btnInit" class="button-s desdeAbajo" onclick="initApp()">
+                            <span class="material-symbols-outlined"  style="margin-right: 0.2em;color:cadetblue">mail</span>
+                            <a href="#page1 row">
+                            <span class="font-sm">Ver invitación</span>
+                            </a></button>
                     </div>
 
             </div>
@@ -85,7 +90,6 @@
 
                     <div class="textoAnimado row aling-center">
                         <div class="date">
-                            <span class="material-symbols-outlined" style="float: right;    color: cadetblue;">calendar_month</span><br><br>
                             <div class="font-sm">Sábado</div>
                             <div class="font-xlg" style="    font-weight: 600;
                             font-size: 4em;
@@ -107,17 +111,36 @@
                     </div>
 
                     <div class="row aling-center">
-                        <div>
+                        <!--<div>
                             <div id="currentDate" class="font-sm"></div>
+                        </div>-->
+                        <div class="cont-temporizador">
+                            <div class="bloque">
+                                <div class="dia" id="dia"></div>
+                                <p>Días</p>
+                            </div>
+                            <div class="bloque">
+                                <div class="dia" id="hora"></div>
+                                <p>Horas</p>
+                            </div>
+                            <div class="bloque">
+                                <div class="dia" id="minuto"></div>
+                                <p>Minutos</p>
+                            </div>
+                            <div class="bloque">
+                                <div class="dia" id="segundo"></div>
+                                <p>Segundos</p>
+                            </div>
                         </div>
                     </div>
                     
                     <div id="btn-location" class="row aling-center">
                         <button class="button-s" >
                             <span class="material-symbols-outlined">
-                                <span class="material-symbols-outlined">location_on</span>
+                                <span class="material-symbols-outlined" style="color :red">location_on</span>
                             </span>
-                           <a href="#googlemaps">Ver ubicación</a> </button>
+                           <a href="#googlemaps">Ubicación</a> 
+                        </button>
                     </div>
                     
                     <div id="btn-confirmation" class="row aling-center">
