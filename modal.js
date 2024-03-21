@@ -37,7 +37,14 @@ function openModal(){
 
 
 async function confirm(){
-    let data = document.getElementById('inpName').value +" "+document.getElementById('inpLastName').value;
+    let data ={
+        name: document.getElementById('inpName').value ,
+        comment: document.getElementById('inpLastName').value
+    };
+    if(Number( document.getElementById('inpLastName').value || 0) >=5){
+        alert("Lo sentimo, aunque queremos que todos asistan, no tenemos suficientes lugares");
+        return
+    }
     await confirmation(data).then((res)=>{
         if(res){
             console.log('confirmado',res)

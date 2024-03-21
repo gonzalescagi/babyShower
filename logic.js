@@ -55,7 +55,7 @@ function initApp(){
     
 }
 
-var fechaObjetivo = new Date("04/28/2024 12:30:00"); // Fecha y hora objetivo
+var fechaObjetivo = new Date("05/04/2024 12:30:00"); // Fecha y hora objetivo
 var tiempoRestanteObj = tiempoRestante(fechaObjetivo);
 
 setInterval(()=>{

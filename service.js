@@ -25,12 +25,13 @@ async function sendConfirmation(url, datos) {
 
 
 async function confirmation(inData){
-    let data = inData || localStorage.getItem("guest");
+    let data = inData.name || localStorage.getItem("guest");
     let first_name="";
     let last_name="";
+    let comment =inData?.comment? ("Asistiré con "+ inData.comment +" acompañantes"): "Asistiré" || "Asistiré";
     if(data){
-        first_name = data.split(" ")[0];
-        last_name = data.split(" ")[1];
+        first_name = data;
+        last_name = "";
        }
     const datos ={
     rsvp: [
@@ -41,7 +42,7 @@ async function confirmation(inData){
                 status: 1,
                 food_restrictions: "",
                 type: 0,
-                comment: "Asistiré",
+                comment,
                 is_selected: true
             }
         ],
