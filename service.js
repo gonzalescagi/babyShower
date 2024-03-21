@@ -14,7 +14,7 @@ async function sendConfirmation(url, datos) {
             if (!response.ok) {
                 throw new Error('Error al enviar la solicitud POST');
             }
-            localStorage.setItem("confirmation",true)
+            localStorage.setItem("confirmation",true);
             return response.json(); // Convertir la respuesta a JSON
         })
         .catch(error => {
@@ -35,21 +35,7 @@ async function confirmation(inData){
         first_name = data;
         last_name = data;
        }
-    const datos ={
-    rsvp: [
-            {
-                guest_guid: null,
-                first_name,
-                last_name,
-                status: 1,
-                food_restrictions: "",
-                type: 0,
-                comment,
-                is_selected: true
-            }
-        ],
-        wli: null
-    }
+
     const newData ={
         rsvp: [
           {

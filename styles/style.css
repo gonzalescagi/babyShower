@@ -12,8 +12,6 @@ body{
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-    
-   
 }
 
 .content{
@@ -65,6 +63,12 @@ body{
     animation-delay: 3.5s;
     z-index: 99;
     filter: blur(2px);
+}
+
+.googlemaps{
+    box-sizing: border-box;
+    padding: 0.5em;
+    background: #f0f0f0;
 }
 
 a{
@@ -156,6 +160,7 @@ a:-webkit-any-link{
 .aling-around{
     justify-content: space-around;
 }
+.font-xxsm{font-size: 0.75em; overflow: visible;}
 .font-xsm{font-size: 0.9em; overflow: visible;}
 .font-sm{font-size: 1.2em; overflow: visible;}
 .font-lg{font-size: 1.7em; overflow: visible;}
@@ -176,6 +181,40 @@ a:-webkit-any-link{
         "INFM" 0,
         "SPAC" 0;
 }
+.satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .caveat-regular {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .outfit-regular {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .qwitcher-grypen-regular {
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .qwitcher-grypen-bold {
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal;
+  }
+
 .box-shadow{
     -webkit-box-shadow: 2px 3px 7px 0 rgba(0,0,0,0.4);
     box-shadow: 2px 3px 7px 0 rgba(0,0,0,0.4);

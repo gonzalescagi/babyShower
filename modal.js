@@ -26,7 +26,7 @@ function showAlert(){
 
 function openModal(){
     if(localStorage.getItem("confirmation")){
-        alert("Gracia, su asistencia ya fue registrada")
+        alert("Gracia, su asistencia ya fue registrada ✌")
         return
     }
     const data = localStorage.getItem("guest");
