@@ -42,7 +42,7 @@ async function confirm(){
         comment: document.getElementById('inpLastName').value
     };
     if(Number( document.getElementById('inpLastName').value || 0) >=5){
-        alert("Lo sentimo, aunque queremos que todos asistan, no tenemos suficientes lugares");
+        alert("Lo sentimos, aunque queremos que todos asistan, no tenemos suficientes lugares. 😬");
         return
     }
     await confirmation(data).then((res)=>{
