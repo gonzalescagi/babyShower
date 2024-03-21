@@ -25,11 +25,18 @@ function showAlert(){
 }
 
 function openModal(){
+    if(localStorage.getItem("confirmation")){
+        alert("Gracia, su asistencia ya fue registrada")
+        return
+    }
     const data = localStorage.getItem("guest");
     if(data){
-        confirmation(null).then((res)=>{
+        document.getElementById('inpName').value = data;
+        document.getElementById('inpName').disabled = true;
+        dialog.classList.add('showDialog'); 
+        /*confirmation({name: data}).then((res)=>{
             if(res)showAlert();
-        });
+        });*/
     }else{
          dialog.classList.add('showDialog'); 
     }
@@ -42,7 +49,7 @@ async function confirm(){
         comment: document.getElementById('inpLastName').value
     };
     if(Number( document.getElementById('inpLastName').value || 0) >=5){
-        alert("Lo sentimos, aunque queremos que todos asistan, no tenemos suficientes lugares. 😬");
+        alert("Lo sentimos, aunque queremos que todos asistan, no tenemos suficientes lugares. 😥");
         return
     }
     await confirmation(data).then((res)=>{
