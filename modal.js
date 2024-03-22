@@ -26,7 +26,7 @@ function showAlert(){
 
 function openModal(){
     if(localStorage.getItem("confirmation")){
-        alert("Gracia, su asistencia ya fue registrada ✌")
+        alert("Gracias, su asistencia ya fue registrada ✌")
         return
     }
     const data = localStorage.getItem("guest");
@@ -48,8 +48,12 @@ async function confirm(){
         name: document.getElementById('inpName').value ,
         comment: document.getElementById('inpLastName').value
     };
-    if(Number( document.getElementById('inpLastName').value || 0) >=5){
+    if(Number( document.getElementById('inpLastName').value || 0) > 9 ){
         alert("Lo sentimos, aunque queremos que todos asistan, no tenemos suficientes lugares. 😥");
+        return
+    }
+    if((document.getElementById('inpName').value || '' )?.length === 0){
+        alert("Debe ingresar su nombre");
         return
     }
     await confirmation(data).then((res)=>{
