@@ -107,7 +107,6 @@ a:-webkit-any-link{
     background: rgba(255, 255, 255, 0.4);
     margin-top: 1em;
     width: 200px;
-    min-height: 200px;
     border: 2px solid #96c8bd;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -236,6 +235,7 @@ a:-webkit-any-link{
     justify-content: space-around;
     align-items: center;
     height: 100vh;
+    min-height: 700px;
     padding-bottom: 2em;
     padding-top: 1em;
     box-sizing: border-box;
