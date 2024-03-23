@@ -30,7 +30,10 @@ function tiempoRestante(fechaObjetivo) {
     var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
     var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
+if(horas < 0){
+    const temp = document.getElementById('temp');
+    temp?temp.style.display="none":null;
+}
     return {
         dias: dias,
         horas: horas,
@@ -55,7 +58,7 @@ function initApp(){
     
 }
 
-var fechaObjetivo = new Date("05/04/2024 12:30:00"); // Fecha y hora objetivo
+var fechaObjetivo = new Date("05/04/2024 18:00:00"); // Fecha y hora objetivo
 var tiempoRestanteObj = tiempoRestante(fechaObjetivo);
 
 setInterval(()=>{

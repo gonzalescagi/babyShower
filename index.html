@@ -1,192 +1,200 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="theme-color" content="#d9efec">
 
-        <title>BabyShower</title>
-        <script src="manifest.js"></script>
-        <link rel="stylesheet" type="text/css" href="./styles/style.css">
-        <link rel="stylesheet" type="text/css" href="./styles/modal.css">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400..700&family=Cookie&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Mrs+Saint+Delafield&family=Outfit:wght@100..900&family=Qwitcher+Grypen:wght@400;700&family=Roboto&family=Satisfy&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <!--ICONOS-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#d9efec">
 
-        <script src="logic.js"></script>
-        <script src="service.js"></script>
-        <script src="modal.js"></script>
-        
-    </head>
-    
-    <body>
-        
-        <div id="modal" class="modal">
-            <div class="modal-form">
-                <div class="row aling-center">
-                    <h2>Enviar Confirmación</h2>
-                </div>
-                <div class="col aling-center">
-                    <label>Nombre y apellido</label>
-                    <input id="inpName" class="modal-input" type="text" style="margin-bottom: 0.5em">
-                    <label>¿Asistirá con acompañantes?</label>
-                    <input id="inpLastName" class="modal-input" type="number" placeholder="0">
-                </div>
-                <div class="row aling-around" style="margin-top: 2em;">
-                    <button class="button-s desdeAbajo" onclick="cancel()">Cancelar</button>
-                    <button class="button-s desdeAbajo" onclick="confirm()">Confirmar</button>
-                </div>
+    <title>BabyShower</title>
+    <script src="manifest.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/modal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400..700&family=Cookie&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Mrs+Saint+Delafield&family=Outfit:wght@100..900&family=Qwitcher+Grypen:wght@400;700&family=Roboto&family=Satisfy&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <!--ICONOS-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="logic.js"></script>
+    <script src="service.js"></script>
+    <script src="modal.js"></script>
+
+</head>
+
+<body>
+
+    <div id="modal" class="modal">
+        <div class="modal-form">
+            <div class="row aling-center">
+                <h2>Enviar Confirmación</h2>
+            </div>
+            <div class="col aling-center">
+                <label>Nombre y apellido</label>
+                <input id="inpName" class="modal-input" type="text" style="margin-bottom: 0.5em">
+                <label>¿Asistirá con acompañantes?</label>
+                <input id="inpLastName" class="modal-input" type="number" placeholder="0">
+            </div>
+            <div class="row aling-around" style="margin-top: 2em;">
+                <button class="button-s desdeAbajo" onclick="cancel()">Cancelar</button>
+                <button class="button-s desdeAbajo" onclick="confirm()">Confirmar</button>
             </div>
         </div>
-        
-        <div id="alert" class="alert">
-            <div class="alert-content col col-center desdeAbajo">
-                <span class="material-symbols-outlined desdeAbajo" style="font-size: 8em">check</span>
-                <p id="alert-body" class="font-sm desdeAbajo">
-                    Gracias por su confirmación
-                </p>
-            </div>
+    </div>
+
+    <div id="alert" class="alert">
+        <div class="alert-content col col-center desdeAbajo">
+            <span class="material-symbols-outlined desdeAbajo" style="font-size: 8em">check</span>
+            <p id="alert-body" class="font-sm desdeAbajo">
+                Gracias por su confirmación
+            </p>
         </div>
-     
-        <div class="content">
-            
-            <img class="banderines" src="assets/banderines.png">
-            <img class="globo-un" src="assets/globo2.png">
-            <img class="estrella-un" src="assets/globo2b.png">
-            
-            <!--PAGINA DE INICIO-->
-            <div class="page init" id="page0">
-                <div class="col col-center">
-                    <img class="globo" src="assets/osito1.png" style="width: 90%">
-                        <span class="font-roboto" style="color:#55827a;">NOS COMPLACE INVITARLOS AL</span>
-                        <h2 class="textoAnimado qwitcher-grypen-bold" style="margin: 0px; font-size: 4em;color: #c38f43;">Baby Shower</h2>
-                        <span class="font-roboto" style="color:#55827a;">EN HONOR A</span>
-                        <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3.1em; overflow: visible; color: darkcyan;
+    </div>
+
+    <div class="content">
+
+        <img class="banderines" src="assets/banderines.png">
+        <img class="globo-un" src="assets/globo2.png">
+        <img class="estrella-un" src="assets/globo2b.png">
+
+        <!--PAGINA DE INICIO-->
+        <div class="page init" id="page0">
+            <div class="col col-center">
+                <img class="globo" src="assets/osito1.png">
+                <span class="font-roboto row aling-center" style="color:#55827a;">NOS COMPLACE INVITARLOS AL</span>
+                <h2 class="textoAnimado qwitcher-grypen-bold" style="margin: 0px; font-size: 4em;color: #c38f43;">Baby
+                    Shower</h2>
+                <span class="font-roboto row aling-center" style="color:#55827a;">EN HONOR A</span>
+                <h2 class="textoAnimado font-xlg" style="margin: 5px; text-align: center; font-size: 3.1em; overflow: visible; color: darkcyan;
     text-shadow: 1px 1px 1px #5f9ea0;">Leonardo Nicolás</h2>
-                        <span class="textoAnimado font-roboto font-sm" style="text-align: center;color:#5d8580;margin-top: 1em; margin-bottom: 1em;">
-                         Acompáñanos a celebrar la llegada de nuestro esperado bebe..!!
-                        </span>
-                </div>
-                 <div class="row aling-center">
-                        <button id="btnInit" class="button-s desdeAbajo" style=" border: 1px solid #c49147;" onclick="initApp()">
-                            <span class="material-symbols-outlined"  style="margin-right:0.2em;color:#c38f43;">mail</span>
-                            <a href="#page1">
-                            Ver invitación
-                            </a></button>
-                    </div>
-
+                <span class="textoAnimado font-roboto font-sm"
+                    style="text-align: center;color:#5d8580;margin-top: 1em; margin-bottom: 1em;">
+                    Acompáñanos a celebrar la llegada de nuestro esperado bebe..!!
+                </span>
             </div>
-        
-            <div class="page" id="page1">
-                
-                <div class="sec">
-                    <div>
+            <div class="row aling-center">
+                <button id="btnInit" class="button-s desdeAbajo" style=" border: 1px solid #c49147;"
+                    onclick="initApp()">
+                    <span class="material-symbols-outlined" style="margin-right:0.2em;color:#c38f43;">mail</span>
+                    <a href="#page1">
+                        Ver invitación
+                    </a></button>
+            </div>
 
-                        <h3 class="textoAnimado" style="font-size: 1.85em;margin-bottom: 0px;">
-                         Acompáñanos a celebrar este día
-                        </h3>
-                    </div>   
-                    
+        </div>
 
-                    <div class="textoAnimado row aling-center">
-                        <div class="date">
-                            <div class="font-sm">Sábado</div>
-                            <div class="font-xlg" style="    font-weight: 600;
+        <div class="page" id="page1">
+
+            <div class="sec">
+                <div>
+                    <span class="textoAnimado" style="font-size: 1.85em;margin-bottom: 0px; color: #836943;">
+                        <b>Acompáñanos a celebrar este día</b>
+                    </span>
+                </div>
+
+
+                <div class="textoAnimado row aling-center">
+                    <div class="date">
+                        <div class="font-sm">Sábado</div>
+                        <div class="font-xlg" style="    font-weight: 600;
                             font-size: 4em;
                             color: #FFA726;
                             text-shadow: 1px 2px 3px #606262;"> 04 </div>
-                            <div class="font-lg">Mayo</div>
-                            <div class="font-xsm">2024</div>
-                        </div>
+                        <div class="font-lg" style="color: #a78759;"><b>Mayo</b></div>
+                        <div class="font-xsm">2024</div>
                     </div>
-                    
-                    <div class="textoAnimado row aling-center font-sm" style="margin-top: 0px;">
-                        <div style="align-items: center;padding: 0.5em; box-sizing: border-box;font-size: 1.1em">
-                             <span style="font-weight: 200; color:gray; font-weight: bold;">Los esperamos en:</span> 
+                </div>
+
+                <div class="textoAnimado row aling-center font-sm" style="margin-top: 0px;">
+                    <div class="addres" style="align-items: center;padding: 0.5em; box-sizing: border-box;font-size: 1.1em">
+                        <span style="font-weight: 200; color:gray; font-weight: bold;">Los esperamos en:</span>
                         <p class="font-roboto font-xxsm " style="color:gray; margin-top: 10px;">
                             Av. Universitaria 7357 Retablo - Comas,Lima (Cristal Palace)</p>
-                        </div>
-                        
-                        <img class="avion" src="assets/avion.png">
                     </div>
 
-                    <div class="row aling-center">
-                        <!--<div>
-                            <div id="currentDate" class="font-sm"></div>
-                        </div>-->
-                        <div class="cont-temporizador">
-                            <div class="bloque">
-                                <div class="dia" id="dia"></div>
-                                <p>Días</p>
-                            </div>
-                            <div class="bloque">
-                                <div class="dia" id="hora"></div>
-                                <p>Horas</p>
-                            </div>
-                            <div class="bloque">
-                                <div class="dia" id="minuto"></div>
-                                <p>Minutos</p>
-                            </div>
-                            <div class="bloque">
-                                <div class="dia" id="segundo"></div>
-                                <p>Segundos</p>
-                            </div>
+                    <img class="avion" src="assets/avion.png">
+                </div>
+
+                <div id="temp" class="row aling-center">
+        
+                    <div class="cont-temporizador">
+                        <div class="bloque">
+                            <div class="dia" id="dia"></div>
+                            <p>Días</p>
+                        </div>
+                        <div class="bloque">
+                            <div class="dia" id="hora"></div>
+                            <p>Horas</p>
+                        </div>
+                        <div class="bloque">
+                            <div class="dia" id="minuto"></div>
+                            <p>Minutos</p>
+                        </div>
+                        <div class="bloque">
+                            <div class="dia" id="segundo"></div>
+                            <p>Segundos</p>
                         </div>
                     </div>
-                    
-                    <div id="btn-location" class="row aling-center">
-                        <button class="button-s" >
-                            <span class="material-symbols-outlined">
-                                <span class="material-symbols-outlined" style="color :red">location_on</span>
-                            </span>
-                           <a href="#googlemaps">Ubicación</a> 
-                        </button>
-                    </div>
-                    
-                    <div id="btn-confirmation" class="row aling-center">
-                        <button class="button-s" style="background-color: #FFA726; color: #fff" onclick="openModal()">
-                            <span class="material-symbols-outlined">person_check</span>
-                            Confirmar asistencia
-                        </button>
-                    </div>
-                    
+                </div>
+
+                <div id="btn-location" class="row aling-center">
+                    <button class="button-s">
+                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined" style="color :#ffa726">location_on</span>
+                        </span>
+                        <a href="#googlemaps">Ubicación</a>
+                    </button>
+                </div>
+
+                <div id="btn-confirmation" class="row aling-center">
+                    <button class="button-s" style="background-color: #FFA726; color: #fff" onclick="openModal()">
+                        <span class="material-symbols-outlined">person_check</span>
+                        Confirmar asistencia
+                    </button>
                 </div>
 
             </div>
 
-            <div class="page" id="page2">
-                <div class="sec">
-                    <div class="row">
-                        <h3>Ubicación</h3>
-                    </div>
-                    
+        </div>
+
+        <div class="page" id="page2">
+            <div class="sec">
+                <div class="row">
+                    <span class="font-sm"><b>Ubicación</b></span>
+                </div>
+
                 <div class=" googlemaps row aling-center" id="googlemaps">
-                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=%20Av.%20Universitaria%207357%20Retablo%20-%20Comas,Lima%20Comas+(BabyShower)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='http://maps-website.com/es'>Map Generator</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d5367e8440f2e2f7719f6f2c92336cf441ac308b'></script>
+                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        id="gmap_canvas"
+                        src="https://maps.google.com/maps?width=400&amp;height=400&amp;hl=en&amp;q=%20Av.%20Universitaria%207357%20Retablo%20-%20Comas,Lima%20Comas+(BabyShower)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    <a href='http://maps-website.com/es'>Map Generator</a>
+                    <script type='text/javascript'
+                        src='https://embedmaps.com/google-maps-authorization/script.js?id=d5367e8440f2e2f7719f6f2c92336cf441ac308b'></script>
                 </div>
                 <p id="boxAdres" class="card box-shadow text-justify font-roboto font-xsm">
-                    <b>Los esperamos</b> en la  Av. Universitaria 7357 Retablo - Comas,Lima 
+                    <b>Los esperamos</b> en la Av. Universitaria 7357 Retablo - Comas,Lima
                     <b>(Cristal Palace)</b>
                     <br>
                     <b>Ref:</b> 2do piso de SOHO.COLOR. Altura de la estación Belaunde - Metropolitano
                 </p>
-                
-                 <img class="animalitos" src="assets/animales.png">
-                
-                </div>
+
+                <img class="animalitos" src="assets/animales.png">
 
             </div>
-            
-           
-        
+
         </div>
-        <!--<div class="contenedor-confeti"></div>-->
-    </body>
-    
+
+
+
+    </div>
+    <!--<div class="contenedor-confeti"></div>-->
+</body>
+
 
 </html>

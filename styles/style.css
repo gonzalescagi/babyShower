@@ -7,10 +7,9 @@ body{
     align-items: center;
     padding: 0px;
     margin: 0px;
-   background-color: #000;
+   background-color: #edf7f6;
     font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -34,19 +33,21 @@ body{
 }
 
 .banderines{    
+    display: none;
     position: fixed;
     top: -7px;
     left: 30%;
-    width: 40%;
+    width: 30%;
     filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
 }
 
 .animalitos{
-    width: 90%;
+    width: 50%;
     float: right;
 }
 
 .globo-un{
+    display: none;
     position: absolute;
     width: 30%;
     bottom: 0;
@@ -54,6 +55,7 @@ body{
     animation: volarup 10.5s ease-in infinite;
 }
 .estrella-un{
+    display: none;
     position: absolute;
     width: 35%;
     bottom: 0;
@@ -69,6 +71,8 @@ body{
     box-sizing: border-box;
     padding: 0.5em;
     background: #f0f0f0;
+    border-radius: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 a{
@@ -84,8 +88,7 @@ a:-webkit-any-link{
     border-radius: 1em;
     border: 4px solid #fff;
     box-sizing: border-box;
-    box-shadow: 
-    -webkit-box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.4);
+    box-shadow: -webkit-box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.4);
     box-shadow: 2px 2px 7px 0 rgba(0,0,0,0.4);
         
 }
@@ -225,13 +228,20 @@ a:-webkit-any-link{
     background: #fff;
     box-sizing: border-box;
 }
-.sec{
-  text-align: center;  
-        display: flex;
+.sec{    
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
+    padding-bottom: 2em;
+    padding-top: 1em;
+    box-sizing: border-box;
+}
+
+.addres{
+    width: 50%;
 }
 
 @media screen and (max-width: 768px) {
@@ -239,12 +249,28 @@ a:-webkit-any-link{
         width: 100%;
     }
     .banderines{
+        display: block;
         position: fixed;
         top: 0px;
         left: 20px;
         width: 90%;
         filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
         transform: rotate(0deg);
+    }
+    .globo{
+        width: 90%!important;
+    }
+    .globo-un{
+        display: block;
+    }
+    .estrella-un{display: block;}
+    .avion{ width: 45% !important;}
+    .animalitos{width: 90%;}
+    .addres{
+        width: auto;
+    }
+    .modal-form{
+        width: 90%!important;
     }
 }
 
@@ -276,6 +302,7 @@ a:-webkit-any-link{
         }
 
 .globo {
+        width: 50%;
         filter: blur(10);
             animation:floatLeftRight  5s ease-in-out infinite, floatUpDown 3s ease-in-out infinite;
         }
@@ -379,7 +406,7 @@ a:-webkit-any-link{
 
 .avion{
     position: relative;
-    width: 45%;
+    width: 25%;
     transition: all;
     float: right;
     right: 0%;
@@ -455,7 +482,7 @@ a:-webkit-any-link{
     align-items: center;
     background-color: rgba(80,80,80,1);
     background-color: rgb(167 135 89);
-    box-shadow: 0px 0px 6px 2px #8a7a7a inset;
+    box-shadow: 0px 0px 6px 2px #9b7d51 inset;
     color: #fff;
     font-size: 1em;
     font-weight: bold;
@@ -468,3 +495,4 @@ a:-webkit-any-link{
 .cont-temporizador .bloque p{
     margin: 0;
 }
+
