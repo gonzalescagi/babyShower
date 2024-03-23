@@ -1,3 +1,11 @@
+function sendWhasap(inData){
+    let phone = localStorage.getItem("phone");
+    
+    const api = "https://api.whatsapp.com/send?phone="+phone+"&text=Hola, mi nombre es "+inData.rsvp[0]?.fields[0]?.options.first_name+
+    " - "+inData.rsvp[0]?.fields[2]?.options?.value;
+    window.open(api, '_blank');
+}
+
 async function sendConfirmation(url, datos) {
     // Opciones para la solicitud POST
     const opciones = {
@@ -12,6 +20,7 @@ async function sendConfirmation(url, datos) {
     const response = await fetch(url, opciones)
         .then(response => {                
             if (!response.ok) {
+                sendWhasap(datos);
                 throw new Error('Error al enviar la solicitud POST');
             }
             localStorage.setItem("confirmation",true);
@@ -19,6 +28,7 @@ async function sendConfirmation(url, datos) {
         })
         .catch(error => {
             console.error('Error:', error);
+            sendWhasap(datos);
             alert("No se pudo enviar su confirmació, intente nuevamente o confirme por whatsapp")
         });
     return response;
@@ -128,10 +138,10 @@ function getParamsWeb(){
     const parametros = new URLSearchParams(url.search);
     // Obtener el valor del parámetro 'name'
     const nombre = parametros.get('name');
+    const phone = parametros.get('phone');
     // Imprimir el valor del parámetro 'name'
-    if(nombre){
-        localStorage.setItem("guest", nombre);
-    }
+    if(nombre)localStorage.setItem("guest", nombre);
+    if(phone)  localStorage.setItem("phone", phone);
 
 }
 
