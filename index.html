@@ -9,45 +9,7 @@
         <meta name="theme-color" content="#d9efec">
 
         <title>BabyShower</title>
-
-        <script>
-            // Obtener el parámetro 'phone' de la URL actual
-            var queryParams = new URLSearchParams(window.location.search);
-            var phoneParam = queryParams.get('phone');
-            
-            // Generar el objeto de manifiesto con el 'start_url' dinámico
-            var manifest = {
-              "name": "Mi PWA",
-              "short_name": "Mi PWA",
-              "start_url": "babyShower/" + (phoneParam ? "?phone=" + phoneParam : ""),
-              "display": "fullscreen",
-              "background_color": "#FFFFFF",
-              "theme_color": "#FF5733",
-              "icons": [
-                {
-                  "src": "icono-192x192.png",
-                  "sizes": "192x192",
-                  "type": "image/png"
-                },
-                {
-                  "src": "icono-512x512.png",
-                  "sizes": "512x512",
-                  "type": "image/png"
-                }
-              ]
-            };
-        
-            // Crear un elemento 'link' para el archivo de manifiesto
-            var link = document.createElement('link');
-            link.rel = 'manifest';
-            link.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(manifest));
-        
-            // Agregar el elemento 'link' al 'head' del documento
-            document.head.appendChild(link);
-          </script>
-        
-
-  
+        <script src="manifest.js"></script>
         <link rel="stylesheet" type="text/css" href="./styles/style.css">
         <link rel="stylesheet" type="text/css" href="./styles/modal.css">
         
