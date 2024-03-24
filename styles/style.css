@@ -68,6 +68,7 @@ body{
 }
 
 .googlemaps{
+    width: 70%!important;
     box-sizing: border-box;
     padding: 0.5em;
     background: #f0f0f0;
@@ -114,6 +115,9 @@ a:-webkit-any-link{
     border-radius: 1em;
     border-style: dashed;
     padding: 1em;
+}
+.boxAdres{
+    width: 70%;
 }
 
 .button-s{
@@ -246,9 +250,7 @@ a:-webkit-any-link{
 }
 
 @media screen and (max-width: 768px) {
-    .content{
-        width: 100%;
-    }
+    .content{ width: 100%;}
     .banderines{
         display: block;
         position: fixed;
@@ -258,23 +260,46 @@ a:-webkit-any-link{
         filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
         transform: rotate(0deg);
     }
-    .globo{
-        width: 90%!important;
-    }
-    .globo-un{
-        display: block;
-    }
+    .globo{width: 90%!important;}
+    .globo-un{display: block;}
     .estrella-un{display: block;}
-    .avion{ width: 45% !important;}
+    .avion{ width: 40% !important;}
     .animalitos{width: 90%;}
-    .addres{
-        width: auto;
-    }
-    .modal-form{
-        width: 90%!important;
-    }
+    .addres{width: auto;}
+    .modal-form{width: 90%!important;}
+    .boxAdres{width: 90%;}
+    .googlemaps{width: 100%!important;}
+    .ref{width: 90%!important;}
 }
 
+.ref{
+    display: flex; flex-direction: column; justify-content: center; width: 50%;
+    color: #3c6963;
+}
+.ref-sec1{
+    width:120px;font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+.ref-sec2{
+    display: flex; flex-direction: row; justify-content: space-around;align-items: center;
+}
+.ref-sec3{
+    width:120px;height: 25px;line-height: 25px;border-top: 2px solid#a58658;border-bottom: 2px solid  #a58658;
+}
+.ref-sec4{
+    color: #ffa726;
+    width: 120px;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    font-size: 3em;
+    font-weight: 600;
+    
+}
+.ref-sec5{
+    font-weight: 600;
+    letter-spacing: 0.3em;
+}
  @keyframes floatUpDown {
             0%, 100% {
                 transform: translateY(0);
