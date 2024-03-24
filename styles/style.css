@@ -275,9 +275,10 @@ a:-webkit-any-link{
 .ref{
     display: flex; flex-direction: column; justify-content: center; width: 50%;
     color: #3c6963;
+    font-family: "Roboto", sans-serif;
 }
 .ref-sec1{
-    width:120px;font-size: 1.5em;
+    width:120px;font-size: 1.2em;
     margin-bottom: 0.5em;
 }
 .ref-sec2{
@@ -292,7 +293,7 @@ a:-webkit-any-link{
     text-align: center;
     height: 25px;
     line-height: 25px;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 600;
     
 }

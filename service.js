@@ -1,5 +1,5 @@
 function sendWhasap(inData){
-    let phone = localStorage.getItem("phone");
+    let phone = localStorage.getItem("phone") || '994828878';
     
     const api = "https://api.whatsapp.com/send?phone="+phone+"&text=Hola, mi nombre es "+inData.rsvp[0]?.fields[0]?.options.first_name+
     " - "+inData.rsvp[0]?.fields[2]?.options?.value;

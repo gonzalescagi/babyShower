@@ -130,7 +130,6 @@ function manejarAnimacion() {
     const seccion = document.querySelector('.date');
     const avion = document.querySelector('.avion');
     //verifica en que seccion esta para activar las animaciones
-    console.log("xx",esVisible(seccion))
     //pagina 2
     if (esVisible(document.querySelector('.date'))) {
             let btnConf = document.getElementById('btn-confirmation');
