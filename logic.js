@@ -156,10 +156,10 @@ function manejarAnimacion() {
 
 //ESPERA QUE CARGUE LA PAGINA
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Dentro del evento DOMContentLoaded:');
-    var audio = document.getElementById('audioPlayer');
     animationScroll();
-    
+    setTimeout(function() {
+        document.body.classList.add('change-color');
+    }, 2500);
     // Agregar un listener para detectar el evento scroll
 window.addEventListener('scroll', manejarAnimacion);
 
