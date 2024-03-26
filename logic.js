@@ -160,6 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.body.classList.add('change-color');
     }, 2500);
+    setTimeout(function() {
+        document.body.classList.remove('change-color');
+    }, 2500);
     // Agregar un listener para detectar el evento scroll
 window.addEventListener('scroll', manejarAnimacion);
 
