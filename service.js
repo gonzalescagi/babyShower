@@ -1,4 +1,4 @@
-function sendWhasap(inData){
+function sendWhasap(inData){console.log('whasapzx')
     let phone = localStorage.getItem("phone") || '994828878';
     
     const api = "https://api.whatsapp.com/send?phone="+phone+"&text=Hola, mi nombre es "+inData.rsvp[0]?.fields[0]?.options.first_name+
@@ -24,6 +24,7 @@ async function sendConfirmation(url, datos) {
                 throw new Error('Error al enviar la solicitud POST');
             }
             localStorage.setItem("confirmation",true);
+            sendWhasap(datos);
             return response.json(); // Convertir la respuesta a JSON
         })
         .catch(error => {

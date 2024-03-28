@@ -252,6 +252,22 @@ a:-webkit-any-link{
 .addres{
     width: 50%;
 }
+.btn-sound-on{
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    color: orange;
+    background: #ffffff;
+    border-radius: 100%;
+    padding: 0.3em;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.btn-sound-on:hover{
+    color: #26C6DA;
+}
 
 @media screen and (max-width: 768px) {
     .content{ width: 100%;}
@@ -264,7 +280,7 @@ a:-webkit-any-link{
         filter: drop-shadow(2px 7px 3px rgba(0, 0, 0, 0.3));
         transform: rotate(0deg);
     }
-    .globo{width: 90%!important;}
+    .globo{width: 80%!important;}
     .globo-un{display: block;}
     .estrella-un{display: block;}
     .avion{ width: 40% !important;}

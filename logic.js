@@ -1,5 +1,6 @@
 //eccion de variables
 var musicOn=false;
+var audio = new Audio('indigo.mp3');
 
 function animationScroll(){
      var links = document.querySelectorAll('a[href^="#"]');
@@ -41,12 +42,23 @@ if(horas < 0){
         segundos: segundos
     };
 }
-
+function showBtnSound(){
+    const btnSound = document.getElementById('btn-sound');
+    btnSound.style.display='flex';
+}
 function playMuic(){
-    var audio = new Audio('indigo.mp3');
     audio.loop = true; // Reproducir en bucle
     audio.play(); // Iniciar reproducción
     musicOn=true;
+    showBtnSound();
+}
+
+function stopMuic(){
+    if (musicOn) {
+        audio.pause(); // Detener la reproducción
+        //audio.currentTime = 0; // Reiniciar la pista al principio
+        musicOn=false;
+    } else playMuic()
 }
 
 function initApp(){
