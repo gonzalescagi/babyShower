@@ -261,7 +261,7 @@ a:-webkit-any-link{
     color: orange;
     background: #ffffff;
     border-radius: 100%;
-    padding: 0.345em;
+    padding: 0.8em;
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
 }
