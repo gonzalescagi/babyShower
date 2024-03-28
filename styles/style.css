@@ -261,7 +261,7 @@ a:-webkit-any-link{
     color: orange;
     background: #ffffff;
     border-radius: 100%;
-    padding: 0.3em;
+    padding: 0.345em;
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
 }
@@ -309,7 +309,7 @@ a:-webkit-any-link{
 }
 .ref-sec4{
     color: #ffa726;
-    width: 120px;
+    width: 80px;
     text-align: center;
     height: 25px;
     line-height: 25px;
