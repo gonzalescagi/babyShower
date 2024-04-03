@@ -1,13 +1,6 @@
 var dialog="";
 var alertNot="";
  
-/*
-async function obtenerDatos() {
-    const respuesta = await fetch('https://api.example.com/data');
-    const datos = await respuesta.json();
-    return datos;
-}
-*/
 async function mostrarDatos() {
     try {
         const datos = await obtenerDatos();
@@ -34,9 +27,6 @@ function openModal(){
         document.getElementById('inpName').value = data;
         document.getElementById('inpName').disabled = true;
         dialog.classList.add('showDialog'); 
-        /*confirmation({name: data}).then((res)=>{
-            if(res)showAlert();
-        });*/
     }else{
          dialog.classList.add('showDialog'); 
     }
@@ -48,7 +38,9 @@ async function confirm(){
         name: document.getElementById('inpName').value ,
         comment: document.getElementById('inpLastName').value
     };
-    if(Number( document.getElementById('inpLastName').value || 0) > 9 ){
+    const companion = localStorage.getItem('companion') || 9 ;
+   
+    if(Number( document.getElementById('inpLastName').value || 0) > companion ){
         alert("Lo sentimos, aunque queremos que todos asistan, no tenemos suficientes lugares. 😥");
         return
     }
@@ -58,7 +50,6 @@ async function confirm(){
     }
     await confirmation(data).then((res)=>{
         if(res){
-            console.log('confirmado',res)
             dialog.classList.remove('showDialog');
             showAlert();
             
@@ -67,9 +58,7 @@ async function confirm(){
     
 }
 
-function cancel(){
-    dialog.classList.remove('showDialog');
-}
+function cancel(){ dialog.classList.remove('showDialog');}
 
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,4 +1,4 @@
-function sendWhasap(inData){console.log('whasapzx')
+function sendWhasap(inData){
     let phone = localStorage.getItem("phone") || '994828878';
     
     const api = "https://api.whatsapp.com/send?phone="+phone+"&text=Hola, mi nombre es "+inData.rsvp[0]?.fields[0]?.options.first_name+
@@ -30,7 +30,7 @@ async function sendConfirmation(url, datos) {
         .catch(error => {
             console.error('Error:', error);
             sendWhasap(datos);
-            alert("No se pudo enviar su confirmació, intente nuevamente o confirme por whatsapp")
+            alert("No se pudo enviar su confirmación, intente nuevamente o confirme por whatsapp")
         });
     return response;
 }
@@ -135,15 +135,13 @@ async function confirmation(inData){
 function getParamsWeb(){
     // Obtener la URL actual
     const url = new URL(window.location.href);
-    // Obtener los parámetros de la URL
     const parametros = new URLSearchParams(url.search);
-    // Obtener el valor del parámetro 'name'
     const nombre = parametros.get('name');
     const phone = parametros.get('phone');
-    // Imprimir el valor del parámetro 'name'
+    const companion = parametros.get('companion');
     if(nombre)localStorage.setItem("guest", nombre);
     if(phone)  localStorage.setItem("phone", phone);
-
+    if(companion)  localStorage.setItem("companion", companion);
 }
 
 
