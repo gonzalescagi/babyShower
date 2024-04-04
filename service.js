@@ -41,7 +41,11 @@ async function confirmation(inData){
     let data = inData.name || localStorage.getItem("guest");
     let first_name="";
     let last_name="";
-    let comment =inData?.comment? ("Asistiré con "+ inData.comment +" acompañantes"): "Asistiré" || "Asistiré";
+    let add = 'acompañante';
+    if(inData?.comment){
+      add = inData?.comment > 1 ? 'acompañantes':add;
+    }
+    let comment =inData?.comment? ("Asistiré con "+ inData.comment +" "+add): "Asistiré" || "Asistiré";
     if(data){
         first_name = data;
         last_name = data;
@@ -86,7 +90,7 @@ async function confirmation(inData){
                   answers: [
                     {
                       guid: "83f3c6625808",
-                      label:"Sí, Recepción",
+                      label:"Sí, Baby shower",
                       linked_to: [
                         {
                           guid: "f75faf7ccf68",

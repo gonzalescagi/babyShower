@@ -18,7 +18,7 @@ function showAlert(){
 }
 
 function openModal(){
-    if(localStorage.getItem("confirmation")){
+    if(localStorage.getItem("confirmation") === 'true'){
         alert("Gracias, su asistencia ya fue registrada ✌")
         return
     }
