@@ -47,7 +47,8 @@ function showBtnSound(){
     btnSound.style.display='flex';
 }
 function playMuic(){
-    audio.loop = true; // Reproducir en bucle
+    //audio.loop = true; // Reproducir en bucle
+    audio.loop = false;
     audio.play(); // Iniciar reproducción
     musicOn=true;
     showBtnSound();
@@ -63,6 +64,7 @@ function stopMuic(){
 
 function initApp(){
     if(!musicOn){
+        audio.currentTime = 17;
         playMuic(); 
         let bt = document.getElementById('btnInit');
         bt.style.display="none";
