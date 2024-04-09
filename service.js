@@ -1,8 +1,8 @@
 function sendWhasap(inData){
     let phone = localStorage.getItem("phone") || '994828878';
 
-    const api = "https://api.whatsapp.com/send?phone="+phone+"&text=¡Hola! 🤩, mi nombre es "+inData.rsvp[0]?.fields[0]?.options.first_name+
-    ", quiero confirmar mi asistencia para el Baby Shower de Leonardito.  "+inData.rsvp[0]?.fields[2]?.options?.value +" 💙";
+    const api = "https://api.whatsapp.com/send?phone="+phone+"&text=¡Hola! 🤩, soy "+inData.rsvp[0]?.fields[0]?.options.first_name+
+    ", quiero confirmar mi asistencia para el Baby Shower de Leonardito. 💙 "+inData.rsvp[0]?.fields[2]?.options?.value;
     window.open(api, '_blank');
 }
 
